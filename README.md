@@ -39,7 +39,8 @@ the console output should be as follows:
 ## Available commands:
 
 
-- `PLACE X,Y,DIRECTION` 
+- `PLACE X,Y,DIRECTION`
+
   place the robot on the board, `X` and `X` should be between 0 and 5. 
 
   Available directions:
@@ -49,13 +50,18 @@ the console output should be as follows:
   - `WEST`
 
 - `REPORT`
+
   prints out the current position and direction of the Robot
 
 - `MOVE`
+
   moves Robot by one tile in the direction it was looking
 
 - `LEFT`
+
   rotates Robot counter-clockwise relative to the current direction
 
 - `RIGHT`
   rotates Robot clockwise relative to the current direction
+
+**Note**: Every command will be silently skipped if the Robot is not placed on the board before.
