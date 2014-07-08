@@ -1,5 +1,4 @@
-# ToyRobot
-
+# ToyRobot [![Code Climate](https://codeclimate.com/github/pokonski/robot.png)](https://codeclimate.com/github/pokonski/robot)
 Simple robot movement simulation which accepts text commands from files or standard input
 
 ## Usage
