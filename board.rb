@@ -9,7 +9,7 @@ class Board
 
 
   def move_robot
-    @robot.move!
+    @robot.move! if @robot.move_possible?(@width, @height)
   end
 
   def place_robot(x, y, direction)

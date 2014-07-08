@@ -32,6 +32,16 @@ class Robot
     @direction.to_s
   end
 
+  def move_possible?(board_width, board_height)
+    new_x = @x + @direction.x
+    new_y = @y + @direction.y
+
+    new_x >= 0 &&
+      new_x <= board_width &&
+        new_y >= 0 &&
+          new_y <= board_height
+  end
+
   private
 
   def current_direction_index

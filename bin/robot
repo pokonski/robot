@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'commander/import'
+require_relative "../app.rb"
+
+
+program :version, '0.0.1'
+program :description, 'Robot simulator controlled by text instructions'
+
+command :run do |c|
+  c.syntax = 'bin/robot run [options]'
+  c.summary = 'Parses the given file for instructions and outputs the results'
+  c.description = 'If no file path supplied it will read standard input'
+  c.example 'Usage', 'bin/robot run data/instructions1.txt'
+  c.example 'Usage', 'bin/robot run data/instructions2.txt'
+  c.example 'Usage', 'bin/robot run data/instructions3.txt'
+
+  c.action do |args, options|
+    app = App.new
+    if args.first
+      app.parse_file(args.first)
+    else
+      app.parse(STDIN.read)
+    end
+  end
+end
+

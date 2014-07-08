@@ -31,6 +31,22 @@ describe Robot do
   end
 
 
+  describe "#move_possible?" do
+    context "when the next move won't go outside the constraints" do
+      it "returns true" do
+        robot = described_class.new(1,1, Direction.new(-1, 0))
+        expect(robot.move_possible?(5,5)).to eq(true)
+      end
+    end
+
+    context "when the next move would make the robot fall out of bounds" do
+      it "returns true" do
+        robot = described_class.new(5,5, Direction.new(1, 0))
+        expect(robot.move_possible?(5,5)).to eq(false)
+      end
+    end
+  end
+
   describe "#move!" do
     it "moves the robot in the direction it looks at" do
       expect(subject.direction.x).to eq(-1)
