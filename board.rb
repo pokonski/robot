@@ -13,7 +13,7 @@ class Board
   end
 
   def place_robot(x, y, direction)
-    if x < 0 || y < 0 || x > width || y > height
+    if !(0..@width).include?(x) || !(0..@height).include?(y)
       raise "Robot would fall down at this position"
     end
     @robot = Robot.new(x, y, direction)

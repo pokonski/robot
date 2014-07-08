@@ -36,10 +36,8 @@ class Robot
     new_x = @x + @direction.x
     new_y = @y + @direction.y
 
-    new_x >= 0 &&
-      new_x <= board_width &&
-        new_y >= 0 &&
-          new_y <= board_height
+    (0..board_width).include?(new_x) &&
+      (0..board_height).include?(new_y)
   end
 
   private
